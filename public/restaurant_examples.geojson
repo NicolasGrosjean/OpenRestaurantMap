@@ -1,0 +1,1584 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2021-12-24T08:04:05Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/611756372",
+        "addr:city": "Troyes",
+        "addr:housenumber": "9",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "french;crepe",
+        "name": "Crêperie La Tourelle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0734795,
+          48.2966851
+        ]
+      },
+      "id": "node/611756372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725153865",
+        "addr:city": "Troyes",
+        "addr:housenumber": "35",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "burger",
+        "email": "hello@rosaparks.fr",
+        "name": "Rosaparks",
+        "opening_hours": "Tu-Th 11:30-14:30,18:30-22:00; Fr 18:30-23:00; Sa 11:30-23:00; Su 11:30-22:00",
+        "opening_hours:covid19": "Mo-Su 11:30-14:30,18:00-22:00",
+        "phone": "+33325703225",
+        "ref:vatin": "FR 70 791260318",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "website": "https://www.rosaparks.fr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0723117,
+          48.2961407
+        ]
+      },
+      "id": "node/725153865"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725153870",
+        "addr:city": "Troyes",
+        "addr:housenumber": "31",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "Restaurant de l'Alhambra",
+        "operator": "Maison Fenek",
+        "phone": "+33 3 25 73 18 41",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "website": "https://www.restaurant-fenek.fr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0724595,
+          48.2962184
+        ]
+      },
+      "id": "node/725153870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725154095",
+        "addr:city": "Troyes",
+        "addr:housenumber": "21, 23",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "capacity": "600",
+        "cuisine": "regional",
+        "delivery": "no",
+        "name": "Grill Saint-Jean",
+        "opening_hours": "12:00-15:00,19:00-23:00",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0729147,
+          48.2963534
+        ]
+      },
+      "id": "node/725154095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/867100977",
+        "addr:city": "Troyes",
+        "addr:housenumber": "53",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Simart",
+        "amenity": "restaurant",
+        "cuisine": "italian;pizza",
+        "name": "Le Polipo",
+        "payment:coins": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "phone": "+33 3 25705324"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0825331,
+          48.3012652
+        ]
+      },
+      "id": "node/867100977"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/867191013",
+        "addr:city": "Troyes",
+        "addr:housenumber": "11",
+        "addr:postcode": "10000",
+        "addr:street": "Place Saint-Rémy",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Midi O Halles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0752795,
+          48.2987522
+        ]
+      },
+      "id": "node/867191013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/867346261",
+        "amenity": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0638791,
+          48.2949431
+        ]
+      },
+      "id": "node/867346261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/867396514",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Palais d'Asie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0738989,
+          48.292411
+        ]
+      },
+      "id": "node/867396514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1373589372",
+        "amenity": "restaurant",
+        "cuisine": "kebab",
+        "name": "Lambo Franco",
+        "phone": "+33325407721",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0726149,
+          48.298508
+        ]
+      },
+      "id": "node/1373589372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1395882189",
+        "amenity": "restaurant",
+        "name": "Speed Rabit Pizza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0919208,
+          48.304896
+        ]
+      },
+      "id": "node/1395882189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1450886596",
+        "amenity": "restaurant",
+        "brand": "Hippopotamus",
+        "brand:website": "http://www.hippopotamus.fr/",
+        "brand:wikidata": "Q3136174",
+        "brand:wikipedia": "fr:Hippopotamus (restaurant)",
+        "cuisine": "steak_house",
+        "name": "Hippopotamus",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0794186,
+          48.2930547
+        ]
+      },
+      "id": "node/1450886596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1984578696",
+        "addr:city": "Troyes",
+        "addr:housenumber": "8",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "name": "L'Illustré",
+        "phone": "+33 3 25 40 00 88",
+        "website": "http://www.lillustre.com",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.073605,
+          48.2968379
+        ]
+      },
+      "id": "node/1984578696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2138832822",
+        "addr:housenumber": "49",
+        "addr:postcode": "10000",
+        "addr:street": "Rue de la Cité",
+        "amenity": "restaurant",
+        "cuisine": "crepe;pancake;savory_pancakes",
+        "name": "Crêperie Le petit Tandem",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0796825,
+          48.2999527
+        ]
+      },
+      "id": "node/2138832822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2138844891",
+        "addr:city": "Troyes",
+        "addr:housenumber": "12",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Pithou",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "Chez Carmen",
+        "opening_hours": "Tu-Sa 12:00-15:00, 19:00-23:00; Su 12:00-15:00",
+        "phone": "+33 3 51 48 60 10",
+        "source": "survey",
+        "website": "https://www.facebook.com/chezcarmen.troyes/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0754013,
+          48.2983689
+        ]
+      },
+      "id": "node/2138844891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2375187166",
+        "amenity": "restaurant",
+        "name": "Le Damier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.071242,
+          48.2974707
+        ]
+      },
+      "id": "node/2375187166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2712494481",
+        "addr:city": "Troyes",
+        "addr:housenumber": "19",
+        "addr:postcode": "10000",
+        "addr:street": "Place Alexandre Israel",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "L'Odyssée",
+        "outdoor_seating": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.074279,
+          48.2970415
+        ]
+      },
+      "id": "node/2712494481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2914344750",
+        "amenity": "restaurant",
+        "cuisine": "kebab",
+        "name": "La Rose Des Sables"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0778108,
+          48.2986344
+        ]
+      },
+      "id": "node/2914344750"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3078543251",
+        "addr:city": "Troyes",
+        "addr:housenumber": "13",
+        "addr:postcode": "10000",
+        "addr:street": "Place Marechal Foch",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "email": "cafedefoy@gmail.com",
+        "internet_access": "wlan",
+        "name": "Le Cafe de Foy",
+        "opening_hours": "Mo-Su 10:00-21:00",
+        "phone": "+33 3 25 73 21 89"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0756015,
+          48.2969587
+        ]
+      },
+      "id": "node/3078543251"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3078627140",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Traversée de Paris",
+        "website": "restaurant-la-traversee-de-paris.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0634726,
+          48.2947226
+        ]
+      },
+      "id": "node/3078627140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3181290126",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "3",
+        "addr:postcode": "10000",
+        "addr:street": "Place du Professeur Langevin",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Dolce Italia",
+        "phone": "+33 3 25 46 54 54",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0758662,
+          48.2959807
+        ]
+      },
+      "id": "node/3181290126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3181290129",
+        "amenity": "restaurant",
+        "cuisine": "italian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0651901,
+          48.3003126
+        ]
+      },
+      "id": "node/3181290129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3799408074",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Saveur d'Asie 3",
+        "opening_hours": "Mo-Fr 09:30-20:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0688869,
+          48.2949109
+        ]
+      },
+      "id": "node/3799408074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3812644282",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Prunelle",
+        "opening_hours": "Mo-We 08:30-17:00; Th-Sa 08:30-22:00",
+        "phone": "+33325739877"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0915173,
+          48.3054251
+        ]
+      },
+      "id": "node/3812644282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3812714846",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "microbrewery": "yes",
+        "name": "Chez Dominique"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0877137,
+          48.3041511
+        ]
+      },
+      "id": "node/3812714846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3812716969",
+        "amenity": "restaurant",
+        "cuisine": "kebab"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0878668,
+          48.3041978
+        ]
+      },
+      "id": "node/3812716969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4279782191",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Trattoria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0773923,
+          48.2975926
+        ]
+      },
+      "id": "node/4279782191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333573123",
+        "addr:city": "Troyes",
+        "addr:housenumber": "31",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Paillot de Montabert",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Au Jardin Gourmand",
+        "phone": "+33 3 25 73 36 13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0729515,
+          48.2971457
+        ]
+      },
+      "id": "node/4333573123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333621206",
+        "addr:city": "Troyes",
+        "addr:housenumber": "67",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Urbain IV",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Sakura",
+        "phone": "+33 9 53 11 06 06",
+        "website": "http://www.sakura3.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0744557,
+          48.2966629
+        ]
+      },
+      "id": "node/4333621206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333681811",
+        "addr:city": "Troyes",
+        "addr:housenumber": "4",
+        "addr:postcode": "10000",
+        "addr:street": "Place Jean Jaurès",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Aux Crieurs de Vin",
+        "phone": "+33 3 25 40 01 01",
+        "website": "http://www.auxcrieursdevin.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0713708,
+          48.2951124
+        ]
+      },
+      "id": "node/4333681811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333681818",
+        "addr:city": "Troyes",
+        "addr:housenumber": "18",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Juvénal des Ursins",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Table de François",
+        "phone": "+33 3 25 73 83 53",
+        "website": "http://www.latabledefrancois.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0714741,
+          48.2953066
+        ]
+      },
+      "id": "node/4333681818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333681819",
+        "addr:city": "Troyes",
+        "addr:housenumber": "17",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Jules Lebocey",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "Lentr'acte",
+        "phone": "+33 3 25 73 69 02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0723789,
+          48.2987697
+        ]
+      },
+      "id": "node/4333681819"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333681820",
+        "addr:city": "Troyes",
+        "addr:housenumber": "37",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Jules Lebocey",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Restaurant Le Rocher",
+        "phone": "+33 3 25 73 18 47",
+        "website": "http://restaurantlerocher.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0715347,
+          48.2983972
+        ]
+      },
+      "id": "node/4333681820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333709136",
+        "addr:city": "Troyes",
+        "addr:housenumber": "20",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Georges Clemenceau",
+        "amenity": "restaurant",
+        "cuisine": "lebanese",
+        "name": "Le Libanais"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0768603,
+          48.2986252
+        ]
+      },
+      "id": "node/4333709136"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4334145558",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "4",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Pithou",
+        "amenity": "restaurant",
+        "cuisine": "corsica",
+        "description": "Specialite CORSES",
+        "name": "Le 20130",
+        "phone": "+336 50 83 25 14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0752238,
+          48.29864
+        ]
+      },
+      "id": "node/4334145558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4334145568",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "15",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Georges Clemenceau",
+        "amenity": "restaurant",
+        "name": "Saveur et Félicité",
+        "opening_hours": "Tu-Sa 09:30-12:30,14:00-19:30",
+        "phone": "+33 3 25 46 67 03",
+        "website": "http://optiqueclemenceau.lesopticienslibres.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.077119,
+          48.2986286
+        ]
+      },
+      "id": "node/4334145568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335086757",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "5",
+        "addr:postcode": "10000",
+        "addr:street": "Place du Marché au Pain",
+        "amenity": "restaurant",
+        "cuisine": "french;regional",
+        "name": "Maxime",
+        "outdoor_seating": "yes",
+        "phone": "+333 25 73 04 88",
+        "website": "https://www.facebook.com/Restaurant-Maxime-Troyes-1516296431961855/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0732881,
+          48.2960099
+        ]
+      },
+      "id": "node/4335086757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335166264",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Clef de Voute",
+        "phone": "+333 25 73 72 07"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0739963,
+          48.2948088
+        ]
+      },
+      "id": "node/4335166264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335166265",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Clef de Voute",
+        "phone": "+333 25 73 72 07"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0740359,
+          48.2948833
+        ]
+      },
+      "id": "node/4335166265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335166266",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "52",
+        "addr:postcode": "10000",
+        "addr:street": "Rue du Général Saussier",
+        "amenity": "restaurant",
+        "cuisine": "russian",
+        "name": "Le Bistrot de l'Artot",
+        "payment:coins": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "phone": "+339 52 79 24 94",
+        "website": "https://www.facebook.com/lebistrotdelartot/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0732909,
+          48.2941473
+        ]
+      },
+      "id": "node/4335166266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335166271",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "48",
+        "addr:postcode": "10000",
+        "addr:street": "Rue du Général Saussier",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Un coin d'Italie",
+        "phone": "+33325415539",
+        "website": "http://uncoinditalie.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0734712,
+          48.2943293
+        ]
+      },
+      "id": "node/4335166271"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335283806",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "61",
+        "addr:postcode": "10000",
+        "addr:street": "Rue de Turenne",
+        "amenity": "restaurant",
+        "name": "La brasserie des Vosges",
+        "opening_hours": "Mo-Sa 11:30-14:30",
+        "website": "http://la-brasserie-des-vosges.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07343,
+          48.2933322
+        ]
+      },
+      "id": "node/4335283806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335427903",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "71",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Raymond Poincaré",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Le Moine Gourmand",
+        "phone": "+333 25 73 77 23",
+        "website": "http://lemoinegourmand.over-blog.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0782002,
+          48.2948413
+        ]
+      },
+      "id": "node/4335427903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335427916",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "5",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Raymond Poincaré",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Sushi Shop",
+        "opening_hours": "Mo-Su 11:00-14:30,18:00-23:00",
+        "operator": "Sushi Shop",
+        "phone": "+33 826 826 628",
+        "takeaway": "yes",
+        "website": "https://www.sushishop.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0760999,
+          48.2965341
+        ]
+      },
+      "id": "node/4335427916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335542255",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "4",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Taverne Karlsbrau",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0737482,
+          48.2969162
+        ]
+      },
+      "id": "node/4335542255"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335542256",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "29",
+        "addr:postcode": "10000",
+        "addr:street": "Place Alexandre Israel",
+        "amenity": "restaurant",
+        "name": "Tout Simplement",
+        "opening_hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+333 25 40 83 72",
+        "website": "http://www.resto-toutsimplement.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0739903,
+          48.2968676
+        ]
+      },
+      "id": "node/4335542256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335542257",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "2",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Le Tablier",
+        "phone": "+33 3 25 73 22 18"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0738065,
+          48.2969925
+        ]
+      },
+      "id": "node/4335542257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335571715",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "25",
+        "addr:postcode": "10000",
+        "addr:street": "Place Alexandre Israël",
+        "amenity": "restaurant",
+        "contact:email": "dts.remy@gmail.com",
+        "cuisine": "french",
+        "name": "L'Annexe Tout Simplement",
+        "outdoor_seating": "yes",
+        "phone": "+33615143322",
+        "website": "http://www.lannexe-toutsimplement.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.074062,
+          48.2969243
+        ]
+      },
+      "id": "node/4335571715"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335571717",
+        "addr:city": "Troyes",
+        "addr:housenumber": "19",
+        "addr:postcode": "10000",
+        "addr:street": "Place Alexandre Israel",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "L'Odyssée",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0740935,
+          48.2969506
+        ]
+      },
+      "id": "node/4335571717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335571727",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "13",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Rouge et Noir"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0732493,
+          48.2965759
+        ]
+      },
+      "id": "node/4335571727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335571728",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "15",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "name": "Vlora"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0731775,
+          48.2965393
+        ]
+      },
+      "id": "node/4335571728"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335592742",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "34",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Five Pizza",
+        "opening_hours": "Mo-Su 11:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0724937,
+          48.2963107
+        ]
+      },
+      "id": "node/4335592742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335592743",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "29",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "name": "Crêperie La Rozelle",
+        "phone": "+33 3 25 82 63 18"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0725319,
+          48.2962487
+        ]
+      },
+      "id": "node/4335592743"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335592752",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "30",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Champeaux",
+        "amenity": "restaurant",
+        "name": "Mademoiselle Anna"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0726352,
+          48.2963772
+        ]
+      },
+      "id": "node/4335592752"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335648645",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "37-39",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Molé",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "La Kasbah",
+        "opening_hours": "Mo-Fr 12:00-14:00,19:00-22:00;Sa 12:00-14:00,19:00-22:30",
+        "phone": "+333 25 73 94 57",
+        "website": "http://www.la-kasbah.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0726326,
+          48.2960408
+        ]
+      },
+      "id": "node/4335648645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335665205",
+        "addr:city": "Troyes",
+        "addr:country": "FR",
+        "addr:housenumber": "82",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Urbain IV",
+        "amenity": "restaurant",
+        "name": "La Fille du Potager",
+        "outdoor_seating": "yes",
+        "phone": "+33 3 25 43 12 81",
+        "website": "http://lafilledupotager.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0729862,
+          48.296054
+        ]
+      },
+      "id": "node/4335665205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335702204",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Restaurant Urbain IV",
+        "opening_hours": "Tu-Sa 12:00-14:30,19:00-22:30",
+        "phone": "+333 25 81 25 33",
+        "website": "http://www.restaurant-urbain4.fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0743743,
+          48.2966197
+        ]
+      },
+      "id": "node/4335702204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4336618009",
+        "addr:city": "Troyes",
+        "addr:housenumber": "13",
+        "addr:postcode": "10000",
+        "addr:street": "Avenue Pierre Brossolette",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Le Pot Lyonnais"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0749301,
+          48.2918408
+        ]
+      },
+      "id": "node/4336618009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4336735422",
+        "addr:city": "Troyes",
+        "addr:housenumber": "53",
+        "addr:postcode": "10000",
+        "addr:street": "Boulevard du 14 Juillet",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "email": "ariatroyes@orange.fr",
+        "name": "Restaurant Inter-Administratif de l'Aube",
+        "operator": "ARIA",
+        "phone": "+333 25 76 25 97",
+        "takeaway": "no",
+        "website": "http://ariatroyes.fr.nf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0757626,
+          48.2930816
+        ]
+      },
+      "id": "node/4336735422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4336921098",
+        "amenity": "restaurant",
+        "name": "Café du Midi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0748757,
+          48.3019128
+        ]
+      },
+      "id": "node/4336921098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5360012656",
+        "amenity": "restaurant",
+        "cuisine": "couscous",
+        "name": "L'Oriental"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0714055,
+          48.304499
+        ]
+      },
+      "id": "node/5360012656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5360012669",
+        "addr:city": "Troyes",
+        "addr:housenumber": "9",
+        "addr:postcode": "10000",
+        "addr:street": "Avenue Major Général Georges Vanier",
+        "amenity": "restaurant",
+        "cuisine": "african;africaine",
+        "food": "yes",
+        "name": "Allocodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0738537,
+          48.3022451
+        ]
+      },
+      "id": "node/5360012669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6935275572",
+        "addr:city": "Troyes",
+        "addr:housenumber": "17–19",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Colonel Driant",
+        "amenity": "restaurant",
+        "check_date:opening_hours": "2021-09-16",
+        "contact:facebook": "kantinetik",
+        "contact:instagram": "kantinetik",
+        "cuisine": "international",
+        "diet:gluten_free": "yes",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "KantinetiK",
+        "opening_hours": "Tu-Fr 08:30-15:30",
+        "phone": "+33 7 84 11 83 75",
+        "start_date": "2018-07-02",
+        "website": "https://kantinetik.business.site",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0685539,
+          48.2947498
+        ]
+      },
+      "id": "node/6935275572"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7199689139",
+        "addr:city": "Troyes",
+        "addr:housenumber": "23",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Urbain IV",
+        "amenity": "restaurant",
+        "contact:facebook": "namasteindiatroyes",
+        "cuisine": "indian;pakistani",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "equipe.namasteindia@gmail.com",
+        "internet_access": "wlan",
+        "name": "Namaste India",
+        "opening_hours": "Tu-Su 11:30-14:30, Tu-Su 18:30-22:30",
+        "phone": "+33 3 25 42 91 03",
+        "start_date": "2018-12-28",
+        "website": "https://namasteindiatroyes.fr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0760647,
+          48.2975936
+        ]
+      },
+      "id": "node/7199689139"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7236283973",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "L'Anima"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0752656,
+          48.2985432
+        ]
+      },
+      "id": "node/7236283973"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7274235008",
+        "addr:city": "Troyes",
+        "addr:housenumber": "33",
+        "addr:postcode": "10000",
+        "addr:street": "Rue de la Cité",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Soleil de l'Inde",
+        "opening_hours": "Tu-Su 12:00-14:30, 19:00-22:30",
+        "phone": "+33 3 25 80 75 71",
+        "website": "http://soleildelinde.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0791307,
+          48.2997013
+        ]
+      },
+      "id": "node/7274235008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7538600159",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/restaurant.to.tzaki",
+        "contact:housenumber": "34",
+        "contact:street": "Rue Viardin",
+        "cuisine": "greek",
+        "delivery:covid19": "no",
+        "drive_through:covid19": "no",
+        "name": "To Tzaki",
+        "opening_hours": "Fr,Sa 12:00-14:00,19:00-22:00",
+        "opening_hours:covid19": "Mo-Sa 12:00-14:00,19:00-20:00",
+        "phone": "+33 3 25 73 91 34",
+        "takeaway:covid19": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0711307,
+          48.292962
+        ]
+      },
+      "id": "node/7538600159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8119415841",
+        "amenity": "restaurant",
+        "brand": "Signorizza",
+        "brand:wikidata": "Q101603846",
+        "contact:facebook": "https://www.facebook.com/signorizzaTroyes",
+        "cuisine": "pizza",
+        "email": "troyes@signorizza.com",
+        "name": "Signorizza",
+        "opening_hours": "Mo-Sa 11:30-13:30,18:30-21:30; Su 18:30-21:00",
+        "outdoor_seating": "yes",
+        "phone": "+333 25 76 13 75",
+        "website": "https://restaurant-pizzeria.signorizza.com/store/signorizza-troyes-troyes-11713"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0722125,
+          48.3049875
+        ]
+      },
+      "id": "node/8119415841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8126998333",
+        "addr:city": "Troyes",
+        "addr:housenumber": "5",
+        "addr:postcode": "10000",
+        "addr:street": "Rue Georges Clemenceau",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "delivery": "yes",
+        "name": "L'atelier lahmacun",
+        "opening_hours:covid19": "Th-Sa 18:00-22:30",
+        "phone": "+33325413739",
+        "takeaway": "yes",
+        "website": "https://www.facebook.com/latelierlahmacun/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0774194,
+          48.2987435
+        ]
+      },
+      "id": "node/8126998333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8144073606",
+        "addr:city": "Troyes",
+        "addr:housenumber": "21",
+        "addr:postcode": "10000",
+        "addr:street": "Rue de la Cité",
+        "amenity": "restaurant",
+        "name": "Le Dix-Dix"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0786921,
+          48.2995241
+        ]
+      },
+      "id": "node/8144073606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8144073614",
+        "amenity": "restaurant",
+        "name": "L'Augustave"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0755178,
+          48.2985171
+        ]
+      },
+      "id": "node/8144073614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8144098118",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Sushi Yaki"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0696075,
+          48.2949026
+        ]
+      },
+      "id": "node/8144098118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8894388567",
+        "amenity": "restaurant",
+        "name": "La Marmitte qui fume"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0748462,
+          48.2969076
+        ]
+      },
+      "id": "node/8894388567"
+    }
+  ]
+}
