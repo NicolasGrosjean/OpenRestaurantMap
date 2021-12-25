@@ -1,20 +1,13 @@
+/* eslint-disable new-cap */
 import React from 'react';
 import { useQuery } from 'react-query';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+// eslint-disable-next-line camelcase
+import opening_hours from 'opening_hours';
 import { OsmPointsType } from '../types';
-
-const DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
-
-L.Marker.prototype.options.icon = DefaultIcon;
+import { getIcon } from '../utils/leafletIcons';
 
 const Map = function () {
   const { isLoading, error, data } = useQuery<OsmPointsType, any>(
@@ -33,6 +26,27 @@ const Map = function () {
   data?.features.forEach((feature) => {
     lat.push(feature.geometry.coordinates[1]);
     lon.push(feature.geometry.coordinates[0]);
+    let markerIcon: L.Icon;
+    let popUpSufix: JSX.Element;
+    if (feature.properties.opening_hours) {
+      const oh = new opening_hours(feature.properties.opening_hours);
+      const isOpen = oh.getState();
+      markerIcon = isOpen ? getIcon('green') : getIcon('red');
+      const nextState = isOpen ? 'Closed' : 'Opened';
+      popUpSufix = (
+        <>
+          <p>{feature.properties.opening_hours}</p>
+          <p>
+            {`${nextState} on ${oh.getNextChange()?.toDateString()} - ${oh
+              .getNextChange()
+              ?.toLocaleTimeString()}`}
+          </p>
+        </>
+      );
+    } else {
+      markerIcon = getIcon('grey');
+      popUpSufix = <p>MISSING opening hours</p>;
+    }
     markers.push(
       <Marker
         position={[
@@ -40,8 +54,12 @@ const Map = function () {
           feature.geometry.coordinates[0],
         ]}
         key={`marker-${id}`}
+        icon={markerIcon}
       >
-        <Popup>{feature.properties.name || 'UNKNOWN'}</Popup>
+        <Popup>
+          <p>{feature.properties.name || 'UNKNOWN'}</p>
+          {popUpSufix}
+        </Popup>
       </Marker>
     );
     id += 1;
