@@ -33,13 +33,20 @@ const Map = function () {
       const isOpen = oh.getState();
       markerIcon = isOpen ? getIcon('green') : getIcon('red');
       const nextState = isOpen ? 'Closed' : 'Opened';
+      const nextChangeDate = oh.getNextChange();
+      const nextChangeHourDiffTime = nextChangeDate
+        ? (nextChangeDate.getTime() - Date.now()) / 1000 / 3600
+        : 1e6;
+      if (isOpen && nextChangeHourDiffTime < 1) {
+        markerIcon = getIcon('orange');
+      }
       popUpSufix = (
         <>
           <p>{feature.properties.opening_hours}</p>
           <p>
-            {`${nextState} on ${oh.getNextChange()?.toDateString()} - ${oh
-              .getNextChange()
-              ?.toLocaleTimeString()}`}
+            {`${nextState} on ${nextChangeDate?.toDateString()} - ${nextChangeDate?.toLocaleTimeString()} (in ${nextChangeHourDiffTime.toFixed(
+              0
+            )} hours)`}
           </p>
         </>
       );
