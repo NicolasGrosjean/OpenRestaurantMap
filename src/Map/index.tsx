@@ -1,18 +1,37 @@
 /* eslint-disable new-cap */
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 // eslint-disable-next-line camelcase
 import opening_hours from 'opening_hours';
-import { OsmPointsType } from '../types';
+import { OverpassResults } from '../utils/types';
 import { getIcon } from '../utils/leafletIcons';
+import {
+  addFakeLatLonToWaysAndRelations,
+  buildOverpassApiUrl,
+} from '../utils/overpass';
 
 const Map = function () {
-  const { isLoading, error, data } = useQuery<OsmPointsType, any>(
+  // const [south, setSouth] = useState(48.29);
+  // const [west, setWest] = useState(4.03);
+  // const [north, setNorth] = useState(48.307);
+  // const [east, setEast] = useState(4.11);
+  const south = 48.29;
+  const west = 4.03;
+  const north = 48.307;
+  const east = 4.11;
+  const [overpassData, setOverpassData] = useState<OverpassResults | null>(
+    null
+  );
+
+  const { isLoading, error, data } = useQuery<OverpassResults, any>(
     'repoData',
-    () => fetch('restaurant_examples.geojson').then((res) => res.json())
+    () =>
+      fetch(
+        buildOverpassApiUrl(south, west, north, east, 'amenity=restaurant')
+      ).then((res) => res.json())
   );
 
   if (isLoading) return <div>Loading...</div>;
@@ -23,13 +42,16 @@ const Map = function () {
   const lat: number[] = [];
   const lon: number[] = [];
   let id = 0;
-  data?.features.forEach((feature) => {
-    lat.push(feature.geometry.coordinates[1]);
-    lon.push(feature.geometry.coordinates[0]);
+  if (data && !overpassData) {
+    setOverpassData(addFakeLatLonToWaysAndRelations(data));
+  }
+  overpassData?.elements.forEach((e) => {
+    lat.push(e.lat!);
+    lon.push(e.lon!);
     let markerIcon: L.Icon;
     let popUpSufix: JSX.Element;
-    if (feature.properties.opening_hours) {
-      const oh = new opening_hours(feature.properties.opening_hours);
+    if (e.tags.opening_hours) {
+      const oh = new opening_hours(e.tags.opening_hours as string);
       const isOpen = oh.getState();
       markerIcon = isOpen ? getIcon('green') : getIcon('red');
       const nextState = isOpen ? 'Closed' : 'Opened';
@@ -42,7 +64,7 @@ const Map = function () {
       }
       popUpSufix = (
         <>
-          <p>{feature.properties.opening_hours}</p>
+          <p>{e.tags.opening_hours as string}</p>
           <p>
             {`${nextState} on ${nextChangeDate?.toDateString()} - ${nextChangeDate?.toLocaleTimeString()} (in ${nextChangeHourDiffTime.toFixed(
               0
@@ -56,15 +78,12 @@ const Map = function () {
     }
     markers.push(
       <Marker
-        position={[
-          feature.geometry.coordinates[1],
-          feature.geometry.coordinates[0],
-        ]}
+        position={[e.lat!, e.lon!]}
         key={`marker-${id}`}
         icon={markerIcon}
       >
         <Popup>
-          <p>{feature.properties.name || 'UNKNOWN'}</p>
+          <p>{(e.tags.name as string) || 'UNKNOWN NAME'}</p>
           {popUpSufix}
         </Popup>
       </Marker>
@@ -80,7 +99,7 @@ const Map = function () {
   return (
     <MapContainer
       center={[latCenter, lonCenter]}
-      zoom={13}
+      zoom={15}
       style={{ height: '100vh' }}
     >
       <TileLayer
