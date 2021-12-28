@@ -46,7 +46,6 @@ const UpdateBounds = function ({ map, setBounds }: UpdateBoundsProps) {
 
 const Map = function () {
   const [bounds, setBounds] = useState([48.29, 4.03, 48.307, 4.11]);
-  const [overpassQueryId, setOverpassQueryId] = useState(0);
   const [overpassData, setOverpassData] = useState<OverpassResults | null>(
     null
   );
@@ -54,11 +53,12 @@ const Map = function () {
 
   useEffect(() => {
     setOverpassData(null);
-    setOverpassQueryId(overpassQueryId + 1);
   }, [bounds]);
 
   const { isLoading, error, data } = useQuery<OverpassResults, any>(
-    `overpassData${overpassQueryId}`,
+    `overpassData${bounds[0].toFixed(2)}_${bounds[1].toFixed(
+      2
+    )}_${bounds[2].toFixed(2)}_${bounds[3].toFixed(2)}`,
     () =>
       fetch(
         buildOverpassApiUrl(
@@ -70,7 +70,6 @@ const Map = function () {
         )
       ).then((res) => res.json())
   );
-  if (isLoading && overpassQueryId === 0) return <div>Loading...</div>;
 
   if (error) return <div>An error has occurred: {error.message}</div>;
 
