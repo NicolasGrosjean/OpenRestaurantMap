@@ -1,0 +1,10 @@
+.main {
+  z-index: 0;
+}
+
+.progress {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  z-index: 100;
+}

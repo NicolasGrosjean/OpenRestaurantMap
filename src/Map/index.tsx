@@ -4,6 +4,7 @@ import L from 'leaflet';
 import { useQuery } from 'react-query';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import CircularProgress from '@mui/material/CircularProgress';
 import { OverpassResults } from '../utils/types';
 import {
   addFakeLatLonToWaysAndRelations,
@@ -11,6 +12,7 @@ import {
 } from '../utils/overpass';
 import Markers from '../Markers';
 import { MIN_ZOOM_OVERPASS } from '../utils/constants';
+import styles from './index.module.css';
 
 type UpdateBoundsProps = {
   map: L.Map | null;
@@ -75,20 +77,27 @@ const Map = function () {
   if (data && !overpassData) {
     setOverpassData(addFakeLatLonToWaysAndRelations(data));
   }
+  // TODO add a message if zoom <= MIN_ZOOM_OVERPASS
   return (
-    <MapContainer
-      center={[(bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2]}
-      zoom={15}
-      style={{ height: '100vh' }}
-      whenCreated={setMap}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Markers data={overpassData} />
-      <UpdateBounds map={map} setBounds={setBounds} />
-    </MapContainer>
+    <>
+      <MapContainer
+        className={styles.main}
+        center={[(bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2]}
+        zoom={15}
+        style={{ height: '100vh' }}
+        whenCreated={setMap}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Markers data={overpassData} />
+        <UpdateBounds map={map} setBounds={setBounds} />
+      </MapContainer>
+      {isLoading ? (
+        <CircularProgress className={styles.progress} size="8em" />
+      ) : null}
+    </>
   );
 };
 
