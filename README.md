@@ -51,3 +51,5 @@ OpenRestaurantMap is released under the [MIT License](http://www.opensource.org/
 - [Fix with Prettier 8.0.0](https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21)
 - [Opening hours](https://github.com/opening-hours/opening_hours.js)
 - [Leaflet colored markers](https://github.com/pointhi/leaflet-color-markers)
+- [React Query](https://react-query.tanstack.com/overview)
+- [Material UI](https://mui.com/)

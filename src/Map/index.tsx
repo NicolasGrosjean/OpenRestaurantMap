@@ -1,5 +1,5 @@
 /* eslint-disable new-cap */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import { useQuery } from 'react-query';
 import { MapContainer, TileLayer } from 'react-leaflet';
@@ -11,7 +11,10 @@ import {
   buildOverpassApiUrl,
 } from '../utils/overpass';
 import Markers from '../Markers';
-import { MIN_ZOOM_OVERPASS } from '../utils/constants';
+import {
+  MIN_ZOOM_OVERPASS,
+  MS_BEFORE_CALLING_OVERPASS,
+} from '../utils/constants';
 import styles from './index.module.css';
 
 type UpdateBoundsProps = {
@@ -22,15 +25,27 @@ type UpdateBoundsProps = {
 
 const UpdateBounds = function ({ map, setBounds }: UpdateBoundsProps) {
   if (!map) return null;
+  // We use a ref because of useCallback
+  const newBoundsRef = useRef([48.29, 4.03, 48.307, 4.11]);
+  const mapMovingDateRef = useRef(Date.now());
 
   const onMove = useCallback(() => {
+    mapMovingDateRef.current = Date.now();
     if (map.getZoom() > MIN_ZOOM_OVERPASS) {
-      setBounds([
+      newBoundsRef.current = [
         map.getBounds().getSouth(),
         map.getBounds().getWest(),
         map.getBounds().getNorth(),
         map.getBounds().getEast(),
-      ]);
+      ];
+      setTimeout(() => {
+        if (
+          Date.now() - mapMovingDateRef.current >
+          MS_BEFORE_CALLING_OVERPASS
+        ) {
+          setBounds(newBoundsRef.current);
+        }
+      }, MS_BEFORE_CALLING_OVERPASS + 1);
     }
   }, [map]);
 
@@ -77,6 +92,7 @@ const Map = function () {
     setOverpassData(addFakeLatLonToWaysAndRelations(data));
   }
   // TODO add a message if zoom <= MIN_ZOOM_OVERPASS
+  // TODO do not load data when we are inside the bound
   return (
     <>
       <MapContainer
