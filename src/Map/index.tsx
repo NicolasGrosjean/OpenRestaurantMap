@@ -19,11 +19,27 @@ import styles from './index.module.css';
 
 type UpdateBoundsProps = {
   map: L.Map | null;
+  bounds: number[];
   // eslint-disable-next-line no-unused-vars
   setBounds: (a: number[]) => void;
 };
 
-const UpdateBounds = function ({ map, setBounds }: UpdateBoundsProps) {
+const UpdateBounds = function ({ map, bounds, setBounds }: UpdateBoundsProps) {
+  /**
+   * Return true if we should update the map :
+   * If the map is zoomed enough (zoom > MIN_ZOOM_OVERPASS) and if its bounds is not included in the previous ones
+   * @param newMap The new map object after moving/zooming
+   * @returns
+   */
+  function shouldUpdateMapData(newMap: L.Map) {
+    if (newMap.getZoom() <= MIN_ZOOM_OVERPASS) return false;
+    if (newMap.getBounds().getSouth() < bounds[0]) return true;
+    if (newMap.getBounds().getWest() < bounds[1]) return true;
+    if (newMap.getBounds().getNorth() > bounds[2]) return true;
+    if (newMap.getBounds().getEast() > bounds[3]) return true;
+    return false;
+  }
+
   if (!map) return null;
   // We use a ref because of useCallback
   const newBoundsRef = useRef([48.29, 4.03, 48.307, 4.11]);
@@ -31,7 +47,7 @@ const UpdateBounds = function ({ map, setBounds }: UpdateBoundsProps) {
 
   const onMove = useCallback(() => {
     mapMovingDateRef.current = Date.now();
-    if (map.getZoom() > MIN_ZOOM_OVERPASS) {
+    if (shouldUpdateMapData(map)) {
       newBoundsRef.current = [
         map.getBounds().getSouth(),
         map.getBounds().getWest(),
@@ -93,7 +109,6 @@ const Map = function () {
     setOverpassData(addFakeLatLonToWaysAndRelations(data));
   }
   // TODO add a message if zoom <= MIN_ZOOM_OVERPASS
-  // TODO do not load data when we are inside the bound
   return (
     <>
       <MapContainer
@@ -108,7 +123,7 @@ const Map = function () {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Markers data={overpassData} />
-        <UpdateBounds map={map} setBounds={setBounds} />
+        <UpdateBounds map={map} bounds={bounds} setBounds={setBounds} />
       </MapContainer>
       {isLoading ? (
         <CircularProgress className={styles.progress} size="8em" />
