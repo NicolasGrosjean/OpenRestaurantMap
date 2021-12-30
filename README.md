@@ -6,11 +6,12 @@ Display the Restaurant OpenStreetMap data in a more usable way.
 
 - Know if restaurants are opened or closed
 - Display all restaurants of the map when zoom > 14
+- Display link to OpenStreetMap object to see more information and edit them
+- Display also fastfood
 
 ## Upcoming features
 
-- Display all restaurant details and a link to OpenStreetMap object
-- Display also fastfood
+- Display all restaurant details
 - Visualize restaurant cuisine with beautiful icons
 - Filter restaurant according their cuisine
 - Change the date and time to know when the restaurants are opened and closed

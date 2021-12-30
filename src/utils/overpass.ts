@@ -6,12 +6,16 @@ export function buildOverpassApiUrl(
   west: number,
   north: number,
   east: number,
-  overpassQuery: string
+  overpassQuery1: string,
+  overpassQuery2?: string
 ) {
   const bounds = `${south},${west},${north},${east}`;
-  const query = `?data=[out:json][timeout:15];(nwr[${overpassQuery}](${bounds}););out body geom;`;
+  const queryPrefix = '?data=[out:json][timeout:15];(';
+  let query = `nwr[${overpassQuery1}](${bounds});`;
+  if (overpassQuery2) query += `nwr[${overpassQuery2}](${bounds});`;
+  const querySuffix = ');out body geom;';
   const baseUrl = 'http://overpass-api.de/api/interpreter';
-  return baseUrl + query;
+  return baseUrl + queryPrefix + query + querySuffix;
 }
 
 // eslint-disable-next-line import/prefer-default-export

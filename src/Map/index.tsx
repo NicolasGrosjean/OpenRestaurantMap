@@ -81,7 +81,8 @@ const Map = function () {
           bounds[1],
           bounds[2],
           bounds[3],
-          'amenity=restaurant'
+          'amenity=restaurant',
+          'amenity=fast_food'
         )
       ).then((res) => res.json())
   );
