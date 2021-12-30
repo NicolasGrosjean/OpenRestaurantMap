@@ -5,7 +5,7 @@ import { Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 // eslint-disable-next-line camelcase
 import opening_hours from 'opening_hours';
-import { OverpassResults } from '../utils/types';
+import { OSMObject, OverpassResults } from '../utils/types';
 import { getIcon } from '../utils/leafletIcons';
 
 type MarkersProps = {
@@ -13,13 +13,13 @@ type MarkersProps = {
 };
 
 const Markers = function ({ data }: MarkersProps) {
-  const markers: JSX.Element[] = [];
-  let id = 0;
-  data?.elements.forEach((e) => {
+  function getMarkerIconAndPopUpOpeningHours(
+    o: OSMObject
+  ): [L.Icon, JSX.Element] {
     let markerIcon: L.Icon;
-    let popUpSufix: JSX.Element;
-    if (e.tags.opening_hours) {
-      const oh = new opening_hours(e.tags.opening_hours as string);
+    let popUpOpeningHours: JSX.Element;
+    if (o.tags.opening_hours) {
+      const oh = new opening_hours(o.tags.opening_hours as string);
       const isOpen = oh.getState();
       markerIcon = isOpen ? getIcon('green') : getIcon('red');
       const nextState = isOpen ? 'Closed' : 'Opened';
@@ -30,9 +30,9 @@ const Markers = function ({ data }: MarkersProps) {
       if (isOpen && nextChangeHourDiffTime < 1) {
         markerIcon = getIcon('orange');
       }
-      popUpSufix = (
+      popUpOpeningHours = (
         <>
-          <p>{e.tags.opening_hours as string}</p>
+          <p>{o.tags.opening_hours as string}</p>
           <p>
             {`${nextState} on ${nextChangeDate?.toDateString()} - ${nextChangeDate?.toLocaleTimeString()} (in ${nextChangeHourDiffTime.toFixed(
               0
@@ -42,8 +42,20 @@ const Markers = function ({ data }: MarkersProps) {
       );
     } else {
       markerIcon = getIcon('grey');
-      popUpSufix = <p>MISSING opening hours</p>;
+      popUpOpeningHours = <p>MISSING opening hours</p>;
     }
+    return [markerIcon, popUpOpeningHours];
+  }
+
+  function getOSMLink(o: OSMObject): string {
+    return `https://www.openstreetmap.org/${o.type}/${o.id}`;
+  }
+
+  const markers: JSX.Element[] = [];
+  let id = 0;
+  data?.elements.forEach((e) => {
+    const [markerIcon, popUpOpeningHours]: [L.Icon, JSX.Element] =
+      getMarkerIconAndPopUpOpeningHours(e);
     markers.push(
       <Marker
         position={[e.lat!, e.lon!]}
@@ -52,7 +64,11 @@ const Markers = function ({ data }: MarkersProps) {
       >
         <Popup>
           <p>{(e.tags.name as string) || 'UNKNOWN NAME'}</p>
-          {popUpSufix}
+          {popUpOpeningHours}
+          <p>
+            <a href={getOSMLink(e)}>See on OpenStreetMap</a> (to edit it for
+            example)
+          </p>
         </Popup>
       </Marker>
     );

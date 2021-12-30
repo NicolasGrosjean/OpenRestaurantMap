@@ -2,7 +2,7 @@ interface Tag {
   [key: string]: unknown;
 }
 
-interface OSMObject {
+export interface OSMObject {
   type: 'node' | 'way' | 'relation';
   id: number;
   tags: Tag;
