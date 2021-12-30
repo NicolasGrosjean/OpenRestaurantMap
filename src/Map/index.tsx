@@ -12,6 +12,7 @@ import {
 } from '../utils/overpass';
 import Markers from '../Markers';
 import {
+  COORDINATES_PRECISION_FOR_BOUNDS,
   MIN_ZOOM_OVERPASS,
   MS_BEFORE_CALLING_OVERPASS,
 } from '../utils/constants';
@@ -87,9 +88,13 @@ const Map = function () {
   }, [bounds]);
 
   const { isLoading, error, data } = useQuery<OverpassResults, any>(
-    `overpassData${bounds[0].toFixed(2)}_${bounds[1].toFixed(
-      2
-    )}_${bounds[2].toFixed(2)}_${bounds[3].toFixed(2)}`,
+    `overpassData${bounds[0].toFixed(
+      COORDINATES_PRECISION_FOR_BOUNDS
+    )}_${bounds[1].toFixed(
+      COORDINATES_PRECISION_FOR_BOUNDS
+    )}_${bounds[2].toFixed(
+      COORDINATES_PRECISION_FOR_BOUNDS
+    )}_${bounds[3].toFixed(COORDINATES_PRECISION_FOR_BOUNDS)}`,
     () =>
       fetch(
         buildOverpassApiUrl(
