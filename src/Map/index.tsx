@@ -13,12 +13,9 @@ import {
   buildOverpassApiUrl,
 } from '../utils/overpass';
 import Markers from '../Markers';
-import {
-  COORDINATES_PRECISION_FOR_BOUNDS,
-  MIN_ZOOM_OVERPASS,
-  MS_BEFORE_CALLING_OVERPASS,
-} from '../utils/constants';
+import * as cts from '../utils/constants';
 import styles from './index.module.css';
+import useCurrentLocation from '../utils/geolocalisation';
 
 type UpdateBoundsProps = {
   map: L.Map | null;
@@ -42,7 +39,7 @@ const UpdateBounds = function ({
    * @returns
    */
   function shouldUpdateMapData(newMap: L.Map) {
-    if (newMap.getZoom() <= MIN_ZOOM_OVERPASS) {
+    if (newMap.getZoom() <= cts.MIN_ZOOM_OVERPASS) {
       setToastZoomOpen(true);
       return false;
     }
@@ -70,11 +67,11 @@ const UpdateBounds = function ({
       setTimeout(() => {
         if (
           Date.now() - mapMovingDateRef.current >
-          MS_BEFORE_CALLING_OVERPASS
+          cts.MS_BEFORE_CALLING_OVERPASS
         ) {
           setBounds(newBoundsRef.current);
         }
-      }, MS_BEFORE_CALLING_OVERPASS + 1);
+      }, cts.MS_BEFORE_CALLING_OVERPASS + 1);
     }
   }, [map]);
 
@@ -95,12 +92,51 @@ const Map = function () {
   );
   const [map, setMap] = useState<L.Map | null>(null);
   const [toastZoomOpen, setToastZoomOpen] = useState(false);
+  const { location, locationError } = useCurrentLocation({
+    timeout: 1000 * 60,
+  });
+  const [hasGotLocationOrError, setHasGotLocationOrError] = useState(false);
 
+  /**
+   * Reset the data to display
+   */
   useEffect(() => {
     setOverpassData(null);
   }, [bounds]);
 
-  const handleCloseToast = (
+  /**
+   * Set the bounds with the geolocation
+   */
+  useEffect(() => {
+    if (location && map)
+      map.setView(
+        [location.latitude, location.longitude],
+        cts.MIN_ZOOM_OVERPASS + 1
+      );
+  }, [location]);
+
+  /**
+   * Display the location error only an amount of time
+   */
+  useEffect(() => {
+    if (locationError !== '') {
+      setTimeout(() => {
+        setHasGotLocationOrError(true);
+      }, cts.LOCATION_STATUS_TIME);
+    }
+  }, [locationError]);
+
+  const handleCloseZoomToast = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setToastZoomOpen(false);
+  };
+
+  const handleCloseGeolocationToast = (
     event?: React.SyntheticEvent | Event,
     reason?: string
   ) => {
@@ -112,12 +148,12 @@ const Map = function () {
 
   const { isLoading, error, data } = useQuery<OverpassResults, any>(
     `overpassData${bounds[0].toFixed(
-      COORDINATES_PRECISION_FOR_BOUNDS
+      cts.COORDINATES_PRECISION_FOR_BOUNDS
     )}_${bounds[1].toFixed(
-      COORDINATES_PRECISION_FOR_BOUNDS
+      cts.COORDINATES_PRECISION_FOR_BOUNDS
     )}_${bounds[2].toFixed(
-      COORDINATES_PRECISION_FOR_BOUNDS
-    )}_${bounds[3].toFixed(COORDINATES_PRECISION_FOR_BOUNDS)}`,
+      cts.COORDINATES_PRECISION_FOR_BOUNDS
+    )}_${bounds[3].toFixed(cts.COORDINATES_PRECISION_FOR_BOUNDS)}`,
     () =>
       fetch(
         buildOverpassApiUrl(
@@ -136,6 +172,8 @@ const Map = function () {
   if (data && !overpassData) {
     setOverpassData(addFakeLatLonToWaysAndRelations(data));
   }
+
+  // TODO Avoid calling overpass when clicking on a marker near the border
 
   return (
     <>
@@ -164,15 +202,29 @@ const Map = function () {
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={toastZoomOpen}
-        autoHideDuration={3000}
-        onClose={handleCloseToast}
+        autoHideDuration={cts.TOAST_DISPLAY_TIME}
+        onClose={handleCloseZoomToast}
       >
         <Alert
-          onClose={handleCloseToast}
+          onClose={handleCloseZoomToast}
           severity="info"
           sx={{ width: '100%' }}
         >
           Zoom-in to display data on the map
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={locationError !== '' && !hasGotLocationOrError}
+        autoHideDuration={cts.TOAST_DISPLAY_TIME}
+        onClose={handleCloseGeolocationToast}
+      >
+        <Alert
+          onClose={handleCloseGeolocationToast}
+          severity="error"
+          sx={{ width: '100%' }}
+        >
+          Failed to get geolocation : {locationError}
         </Alert>
       </Snackbar>
     </>
