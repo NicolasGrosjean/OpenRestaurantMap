@@ -5,6 +5,8 @@ import { useQuery } from 'react-query';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import CircularProgress from '@mui/material/CircularProgress';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import { OverpassResults } from '../utils/types';
 import {
   addFakeLatLonToWaysAndRelations,
@@ -23,9 +25,16 @@ type UpdateBoundsProps = {
   bounds: number[];
   // eslint-disable-next-line no-unused-vars
   setBounds: (a: number[]) => void;
+  // eslint-disable-next-line no-unused-vars
+  setToastZoomOpen: (a: boolean) => void;
 };
 
-const UpdateBounds = function ({ map, bounds, setBounds }: UpdateBoundsProps) {
+const UpdateBounds = function ({
+  map,
+  bounds,
+  setBounds,
+  setToastZoomOpen,
+}: UpdateBoundsProps) {
   /**
    * Return true if we should update the map :
    * If the map is zoomed enough (zoom > MIN_ZOOM_OVERPASS) and if its bounds is not included in the previous ones
@@ -33,7 +42,10 @@ const UpdateBounds = function ({ map, bounds, setBounds }: UpdateBoundsProps) {
    * @returns
    */
   function shouldUpdateMapData(newMap: L.Map) {
-    if (newMap.getZoom() <= MIN_ZOOM_OVERPASS) return false;
+    if (newMap.getZoom() <= MIN_ZOOM_OVERPASS) {
+      setToastZoomOpen(true);
+      return false;
+    }
     if (newMap.getBounds().getSouth() < bounds[0]) return true;
     if (newMap.getBounds().getWest() < bounds[1]) return true;
     if (newMap.getBounds().getNorth() > bounds[2]) return true;
@@ -82,10 +94,21 @@ const Map = function () {
     null
   );
   const [map, setMap] = useState<L.Map | null>(null);
+  const [toastZoomOpen, setToastZoomOpen] = useState(false);
 
   useEffect(() => {
     setOverpassData(null);
   }, [bounds]);
+
+  const handleCloseToast = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setToastZoomOpen(false);
+  };
 
   const { isLoading, error, data } = useQuery<OverpassResults, any>(
     `overpassData${bounds[0].toFixed(
@@ -113,7 +136,7 @@ const Map = function () {
   if (data && !overpassData) {
     setOverpassData(addFakeLatLonToWaysAndRelations(data));
   }
-  // TODO add a message if zoom <= MIN_ZOOM_OVERPASS
+
   return (
     <>
       <MapContainer
@@ -128,11 +151,30 @@ const Map = function () {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Markers data={overpassData} />
-        <UpdateBounds map={map} bounds={bounds} setBounds={setBounds} />
+        <UpdateBounds
+          map={map}
+          bounds={bounds}
+          setBounds={setBounds}
+          setToastZoomOpen={setToastZoomOpen}
+        />
       </MapContainer>
       {isLoading ? (
         <CircularProgress className={styles.progress} size="8em" />
       ) : null}
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={toastZoomOpen}
+        autoHideDuration={3000}
+        onClose={handleCloseToast}
+      >
+        <Alert
+          onClose={handleCloseToast}
+          severity="info"
+          sx={{ width: '100%' }}
+        >
+          Zoom-in to display data on the map
+        </Alert>
+      </Snackbar>
     </>
   );
 };
