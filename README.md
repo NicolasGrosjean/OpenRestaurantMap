@@ -2,6 +2,10 @@
 
 Display the Restaurant OpenStreetMap data in a more usable way.
 
+## Website
+
+OpenRestaurantMap is available to [this url](https://nicolasgrosjean.github.io/OpenRestaurantMap/).
+
 ## Features
 
 - Know if restaurants are opened or closed
