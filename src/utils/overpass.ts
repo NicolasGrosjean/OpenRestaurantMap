@@ -14,7 +14,7 @@ export function buildOverpassApiUrl(
   let query = `nwr[${overpassQuery1}](${bounds});`;
   if (overpassQuery2) query += `nwr[${overpassQuery2}](${bounds});`;
   const querySuffix = ');out body geom;';
-  const baseUrl = 'http://overpass-api.de/api/interpreter';
+  const baseUrl = 'https://overpass-api.de/api/interpreter';
   return baseUrl + queryPrefix + query + querySuffix;
 }
 
