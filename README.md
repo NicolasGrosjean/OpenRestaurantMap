@@ -9,6 +9,7 @@ Display the Restaurant OpenStreetMap data in a more usable way.
 - Display link to OpenStreetMap object to see more information and edit them
 - Display also fastfood
 - Allow geolocalisation to position the map
+- Website available thanks to GitHub Pages
 
 ## Upcoming features
 
@@ -17,7 +18,6 @@ Display the Restaurant OpenStreetMap data in a more usable way.
 - Filter restaurant according their cuisine
 - Change the date and time to know when the restaurants are opened and closed
 - Search for a city to position the map
-- Website available thanks to GitHub Pages
 
 ## Developpers
 
@@ -39,7 +39,7 @@ npm start
 ### Building
 
 ```
-npm build
+npm run build
 ```
 
 ### Licence
@@ -56,3 +56,5 @@ OpenRestaurantMap is released under the [MIT License](http://www.opensource.org/
 - [React Query](https://react-query.tanstack.com/overview)
 - [Material UI](https://mui.com/)
 - [Use geolocalisation API with React Hooks](https://github.com/NorbertB29/geolocation-api-hook/blob/master/src/hooks/useCurrentLocation.js)
+- [Publish website on GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [Build React projects for a custom relative webpage](https://create-react-app.dev/docs/deployment#building-for-relative-paths)
