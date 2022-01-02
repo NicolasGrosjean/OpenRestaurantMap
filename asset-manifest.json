@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/OpenRestaurantMap/static/css/main.272ae672.css",
+    "main.js": "/OpenRestaurantMap/static/js/main.9e1e055f.js",
+    "static/js/787.66d2533d.chunk.js": "/OpenRestaurantMap/static/js/787.66d2533d.chunk.js",
+    "index.html": "/OpenRestaurantMap/index.html",
+    "main.272ae672.css.map": "/OpenRestaurantMap/static/css/main.272ae672.css.map",
+    "main.9e1e055f.js.map": "/OpenRestaurantMap/static/js/main.9e1e055f.js.map",
+    "787.66d2533d.chunk.js.map": "/OpenRestaurantMap/static/js/787.66d2533d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.272ae672.css",
+    "static/js/main.9e1e055f.js"
+  ]
+}
