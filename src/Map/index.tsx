@@ -85,7 +85,11 @@ const UpdateBounds = function ({
   return null;
 };
 
-const Map = function () {
+type MapProps = {
+  date: Date | null;
+};
+
+const Map = function ({ date }: MapProps) {
   const [bounds, setBounds] = useState([48.29, 4.03, 48.307, 4.11]);
   const [overpassData, setOverpassData] = useState<OverpassResults | null>(
     null
@@ -181,6 +185,7 @@ const Map = function () {
         className={styles.main}
         center={[(bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2]}
         zoom={15}
+        zoomControl={false}
         style={{ height: '100vh' }}
         whenCreated={setMap}
       >
@@ -188,7 +193,7 @@ const Map = function () {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Markers data={overpassData} />
+        <Markers data={overpassData} date={date} />
         <UpdateBounds
           map={map}
           bounds={bounds}

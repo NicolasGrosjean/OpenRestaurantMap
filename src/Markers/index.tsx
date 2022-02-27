@@ -10,9 +10,10 @@ import { getIcon } from '../utils/leafletIcons';
 
 type MarkersProps = {
   data: OverpassResults | null;
+  date: Date | null;
 };
 
-const Markers = function ({ data }: MarkersProps) {
+const Markers = function ({ data, date }: MarkersProps) {
   function getMarkerIconAndPopUpOpeningHours(
     o: OSMObject
   ): [L.Icon, JSX.Element] {
@@ -20,10 +21,10 @@ const Markers = function ({ data }: MarkersProps) {
     let popUpOpeningHours: JSX.Element;
     if (o.tags.opening_hours) {
       const oh = new opening_hours(o.tags.opening_hours as string);
-      const isOpen = oh.getState();
+      const isOpen = oh.getState(date || undefined);
       markerIcon = isOpen ? getIcon('green') : getIcon('red');
       const nextState = isOpen ? 'Closed' : 'Opened';
-      const nextChangeDate = oh.getNextChange();
+      const nextChangeDate = oh.getNextChange(date || undefined);
       const nextChangeHourDiffTime = nextChangeDate
         ? (nextChangeDate.getTime() - Date.now()) / 1000 / 3600
         : 1e6;

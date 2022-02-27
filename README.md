@@ -13,6 +13,7 @@ OpenRestaurantMap is available to [this url](https://nicolasgrosjean.github.io/O
 - Display link to OpenStreetMap object to see more information and edit them
 - Display also fastfood
 - Allow geolocalisation to position the map
+- Change the date and time to know when the restaurants are opened and closed
 - Website available thanks to GitHub Pages
 
 ## Upcoming features
@@ -20,13 +21,12 @@ OpenRestaurantMap is available to [this url](https://nicolasgrosjean.github.io/O
 - Display all restaurant details
 - Visualize restaurant cuisine with beautiful icons
 - Filter restaurant according their cuisine
-- Change the date and time to know when the restaurants are opened and closed
 - Search for a city to position the map
 
 ## Developpers
 
 This project is originally personal to practise React, Leaflet and MaterialUI on OpenStreetMap data.
-But do not hesitate to fork it to contribute or use it. 
+But do not hesitate to fork it to contribute or use it.
 
 ### Install
 
