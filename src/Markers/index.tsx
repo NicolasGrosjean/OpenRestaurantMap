@@ -20,27 +20,33 @@ const Markers = function ({ data, date }: MarkersProps) {
     let markerIcon: L.Icon;
     let popUpOpeningHours: JSX.Element;
     if (o.tags.opening_hours) {
-      const oh = new opening_hours(o.tags.opening_hours as string);
-      const isOpen = oh.getState(date || undefined);
-      markerIcon = isOpen ? getIcon('green') : getIcon('red');
-      const nextState = isOpen ? 'Closed' : 'Opened';
-      const nextChangeDate = oh.getNextChange(date || undefined);
-      const nextChangeHourDiffTime = nextChangeDate
-        ? (nextChangeDate.getTime() - Date.now()) / 1000 / 3600
-        : 1e6;
-      if (isOpen && nextChangeHourDiffTime < 1) {
-        markerIcon = getIcon('orange');
+      try {
+        const oh = new opening_hours(o.tags.opening_hours as string);
+        const isOpen = oh.getState(date || undefined);
+        markerIcon = isOpen ? getIcon('green') : getIcon('red');
+        const nextState = isOpen ? 'Closed' : 'Opened';
+        const nextChangeDate = oh.getNextChange(date || undefined);
+        const nextChangeHourDiffTime = nextChangeDate
+          ? (nextChangeDate.getTime() - Date.now()) / 1000 / 3600
+          : 1e6;
+        if (isOpen && nextChangeHourDiffTime < 1) {
+          markerIcon = getIcon('orange');
+        }
+        popUpOpeningHours = (
+          <>
+            <p>{o.tags.opening_hours as string}</p>
+            <p>
+              {`${nextState} on ${nextChangeDate?.toDateString()} - ${nextChangeDate?.toLocaleTimeString()} (in ${nextChangeHourDiffTime.toFixed(
+                0
+              )} hours)`}
+            </p>
+          </>
+        );
+      } catch {
+        console.error(`Invalid opening hours for ${o.type} of id ${o.id}`);
+        markerIcon = getIcon('grey');
+        popUpOpeningHours = <p>INVALID opening hours</p>;
       }
-      popUpOpeningHours = (
-        <>
-          <p>{o.tags.opening_hours as string}</p>
-          <p>
-            {`${nextState} on ${nextChangeDate?.toDateString()} - ${nextChangeDate?.toLocaleTimeString()} (in ${nextChangeHourDiffTime.toFixed(
-              0
-            )} hours)`}
-          </p>
-        </>
-      );
     } else {
       markerIcon = getIcon('grey');
       popUpOpeningHours = <p>MISSING opening hours</p>;
